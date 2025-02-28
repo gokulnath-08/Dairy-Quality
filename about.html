@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Dairy Quality Checker</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4CAF50, #2196F3);
+            color: white;
+            padding: 20px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 30px;
+            margin-right: 8px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 19px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 22px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                text-align: left;
+                padding: 10px;
+                border-radius: 6px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+                width: 150px;
+            }
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            margin-top: 100px;
+            color: black;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            let menu = document.querySelector('.navbar ul');
+            menu.classList.toggle('active');
+
+            if (menu.classList.contains('active')) {
+                menu.style.display = "flex";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span style="color: white; font-size: 20px; font-weight: bold;">Dairy Quality Checker</span>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="admin.php">Admin</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>About Our Mini Project</h2>
+        <p>
+            Our mini project, <strong>IoT-Based Colorimetric Techniques and pH-Sensitive Packaging Solutions</strong>,
+            leverages advanced sensor technology to monitor food quality in real time. The system integrates
+            colorimetric sensors, which detect pH variations that indicate spoilage, ensuring enhanced food safety.
+        </p>
+        <p>
+            By connecting these sensors to an IoT-enabled platform, businesses can remotely track food conditions,
+            improve inventory management, and build consumer trust through transparency. This innovative solution is
+            particularly effective for dairy products and can be extended to other perishable goods, benefiting both
+            industries and consumers alike.
+        </p>
+    </div>
+</body>
+
+</html>

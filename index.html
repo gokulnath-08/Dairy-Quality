@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Quality Checker</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4CAF50, #2196F3);
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 30px;
+            margin-right: 8px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 19px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 22px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                text-align: left;
+                padding: 10px;
+                border-radius: 6px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+                width: 150px;
+            }
+
+
+            .navbar ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 320px;
+            scale: 115%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container h2 {
+            padding: 20px;
+            color: #000;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 6px;
+            transition: 0.3s ease;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            let menu = document.querySelector('.navbar ul');
+            menu.classList.toggle('active');
+
+            if (menu.classList.contains('active')) {
+                menu.style.display = "flex";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span style="color: white; font-size: 20px; font-weight: bold;">Dairy Quality Checker</span>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="admin.php">Admin</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Dairy Quality Checker</h2>
+        <button onclick="window.location.href='./dairy_qr/scanner.html'">Click to Open Scanner</button>
+    </div>
+</body>
+
+</html>
